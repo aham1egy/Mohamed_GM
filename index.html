@@ -58,24 +58,11 @@
             transform: scale(1.2);
         }
 
-        /* الإعلان */
-        .ad-banner {
-            width: 100%;
-            height: calc(100vh - 80px); /* ملء الشاشة تحت الشريط العلوي */
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            color: white;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
         /* المحتوى الرئيسي */
         .container {
             padding: 20px;
             margin-top: 20px;
-            display: none; /* مخفي في البداية */
+            padding-bottom: 120px; /* تباعد أسفل لتجنب التداخل مع البنر */
         }
 
         /* تصميم البطاقات */
@@ -121,26 +108,39 @@
 
         /* إطار اللعبة */
         #gameFrame {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    z-index: 1001; /* تأكد من أن z-index أعلى من البنر */
-    display: none;
-    background: #000; /* خلفية سوداء لتغطية المحتوى */
-}
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: 1001; /* فوق البنر */
+            display: none;
+            background: #000;
+        }
+
         /* زر الإغلاق */
         .close-btn {
             position: fixed;
             top: 20px;
             left: 20px;
-            z-index: 1000;
+            z-index: 1002; /* فوق اللعبة */
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
             display: none;
+        }
+
+        /* تثبيت البنر في الأسفل */
+        #ad-container {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000; /* تحت اللعبة */
+            background: white; /* لون خلفية البنر */
+            padding: 10px; /* تباعد داخلي */
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* ظل */
         }
 
         /* تصميم متجاوب */
@@ -158,123 +158,21 @@
             }
         }
     </style>
-       <script async="async" data-cfasync="false" src="//relishsubsequentlytank.com/37c0fe9987ba1ade1233d34bfe324511/invoke.js"></script>
+    <script async="async" data-cfasync="false" src="//relishsubsequentlytank.com/37c0fe9987ba1ade1233d34bfe324511/invoke.js"></script>
 </head>
 <body>
     <!-- الشريط العلوي -->
     <div class="top-bar">
         <div class="icons">
             <div class="icon" data-category="action">🎮</div> <!-- أيقونة التصنيف 1 -->
-            <div class="icon" data-category="sports">⚽</div> <!-- أيقونة التصنيف 2 -->
-            <div class="icon" data-category="adventure">🏞️</div> <!-- أيقونة التصنيف 3 -->
+    <!--         <div class="icon" data-category="sports">⚽</div> <!-- أيقونة التصنيف 2 -->
+           <!--  <div class="icon" data-category="adventure">🏞️</div> <!-- أيقونة التصنيف 3 -->
         </div>
         <div class="app-name">Mohamed GM</div>
         <div class="icons">
             <div class="icon" onclick="window.open('https://instagram.com/aham1eg', '_blank')">📞</div> <!-- أيقونة الدعم -->
         </div>
     </div>
-
-    <!-- الإعلان -->
-    <div class="ad-banner">
-        <div id="container-37c0fe9987ba1ade1233d34bfe324511"></div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <title>موقعي</title>
-    <style>
-        /* تثبيت البنر في الأسفل */
-        #ad-container {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            background: white; /* لون خلفية البنر (اختياري) */
-            padding: 10px; /* تباعد داخلي (اختياري) */
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* ظل (اختياري) */
-        }
-    </style>
-</head>
-<body>
-    <!-- محتوى الصفحة -->
-
-    <!-- حاوية الإعلان -->
-    <div id="ad-container">
-        <script type="text/javascript">
-            // تعريف خيارات الإعلان
-            var atOptions = {
-                'key': '1e6c0af90b2c4eeae9f9aa353b0b8f74',
-                'format': 'iframe',
-                'height': 90,
-                'width': 728,
-                'params': {}
-            };
-
-            // دالة لتحميل الإعلان
-            function loadAd() {
-                var script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.src = '//relishsubsequentlytank.com/e72f74d8ea0398857cdba4ea7af8f358/invoke.js';
-                document.getElementById('ad-container').innerHTML = ''; // مسح الإعلان القديم
-                document.getElementById('ad-container').appendChild(script); // إضافة الإعلان الجديد
-            }
-
-            // تحميل الإعلان لأول مرة
-            loadAd();
-
-            // تحديث الإعلان كل 5 ثوانٍ
-            setInterval(loadAd, 5000);
-        </script>
-    </div>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- المحتوى الرئيسي -->
     <div class="container">
@@ -283,61 +181,96 @@
             <div class="game-card" data-category="action" data-game-url="https://games.e-droid.net/en/fruit-slice-frenzy-appcreator24/index.html">
                 <img src="https://k.top4top.io/p_3328njfc31.jpg" alt="حرب البلح">
                 <h3>حرب البلح</h3>
+                
             </div>
-            <div class="game-card" data-category="action" data-game-url="رابط_اللعبة_2">
-                <img src="https://via.placeholder.com/300x200" alt="لعبة 2">
-                <h3>لعبة 2</h3>
+            
+            
+            
+                        <div class="game-card" data-category="action" data-game-url="https://games.e-droid.net/en/fruit-slice-frenzy-appcreator24/index.html">
+                <img src="https://k.top4top.io/p_3328njfc31.jpg" alt="حرب البلح">
+                <h3>حرب البلح</h3>
+                
             </div>
             <div class="game-card" data-category="action" data-game-url="https://games.e-droid.net/en/fruit-slice-frenzy-appcreator24/index.html">
                 <img src="https://k.top4top.io/p_3328njfc31.jpg" alt="حرب البلح">
                 <h3>حرب البلح</h3>
+                
             </div>
-            <div class="game-card" data-category="action" data-game-url="رابط_اللعبة_2">
-                <img src="https://via.placeholder.com/300x200" alt="لعبة 2">
-                <h3>لعبة 2</h3>
-            </div><div class="game-card" data-category="action" data-game-url="https://games.e-droid.net/en/fruit-slice-frenzy-appcreator24/index.html">
+            <div class="game-card" data-category="action" data-game-url="https://games.e-droid.net/en/fruit-slice-frenzy-appcreator24/index.html">
                 <img src="https://k.top4top.io/p_3328njfc31.jpg" alt="حرب البلح">
                 <h3>حرب البلح</h3>
+                
             </div>
-            <div class="game-card" data-category="action" data-game-url="رابط_اللعبة_2">
-                <img src="https://via.placeholder.com/300x200" alt="لعبة 2">
-                <h3>لعبة 2</h3>
-            </div><div class="game-card" data-category="action" data-game-url="https://games.e-droid.net/en/fruit-slice-frenzy-appcreator24/index.html">
+            <div class="game-card" data-category="action" data-game-url="https://games.e-droid.net/en/fruit-slice-frenzy-appcreator24/index.html">
                 <img src="https://k.top4top.io/p_3328njfc31.jpg" alt="حرب البلح">
                 <h3>حرب البلح</h3>
+                
             </div>
-            <div class="game-card" data-category="action" data-game-url="رابط_اللعبة_2">
-                <img src="https://via.placeholder.com/300x200" alt="لعبة 2">
-                <h3>لعبة 2</h3>
-            </div><div class="game-card" data-category="action" data-game-url="https://games.e-droid.net/en/fruit-slice-frenzy-appcreator24/index.html">
+            <div class="game-card" data-category="action" data-game-url="https://games.e-droid.net/en/fruit-slice-frenzy-appcreator24/index.html">
                 <img src="https://k.top4top.io/p_3328njfc31.jpg" alt="حرب البلح">
                 <h3>حرب البلح</h3>
+                
             </div>
-            <div class="game-card" data-category="action" data-game-url="رابط_اللعبة_2">
-                <img src="https://via.placeholder.com/300x200" alt="لعبة 2">
-                <h3>لعبة 2</h3>
+            <div class="game-card" data-category="action" data-game-url="https://games.e-droid.net/en/superhero-memory-match-hd-appcreator24/index.html">
+                <img src="https://h.top4top.io/p_3328ygc5d1.jpg" alt="superhero-memory-match-hd">
+                <h3>superhero-memory-match-hd</h3>
+                
+            </div>
+            <div class="game-card" data-category="action" data-game-url="https://games.e-droid.net/en/fruit-slice-frenzy-appcreator24/index.html">
+                <img src="https://k.top4top.io/p_3328njfc31.jpg" alt="fruit-slice-frenzy">
+                <h3>حرب البلح</h3>
+                
             </div>
 
-            <!-- تصنيف رياضة -->
-            <div class="game-card" data-category="sports" data-game-url="رابط_اللعبة_3">
-                <img src="https://via.placeholder.com/300x200" alt="لعبة 3">
-                <h3>لعبة 3</h3>
+            <div class="game-card" data-category="action" data-game-url="https://games.e-droid.net/en/defend-the-tank-appcreator24/index.html">
+                <img src="https://f.top4top.io/p_33283adsa1.jpg" alt="defend-the-tank">
+                <h3>defend-the-tank</h3>
             </div>
-            <div class="game-card" data-category="sports" data-game-url="رابط_اللعبة_4">
-                <img src="https://via.placeholder.com/300x200" alt="لعبة 4">
-                <h3>لعبة 4</h3>
-            </div>
+            
 
-            <!-- تصنيف مغامرة -->
-            <div class="game-card" data-category="adventure" data-game-url="رابط_اللعبة_5">
-                <img src="https://via.placeholder.com/300x200" alt="لعبة 5">
-                <h3>لعبة 5</h3>
-            </div>
-            <div class="game-card" data-category="adventure" data-game-url="رابط_اللعبة_6">
-                <img src="https://via.placeholder.com/300x200" alt="لعبة 6">
-                <h3>لعبة 6</h3>
-            </div>
+
+
+
+
+       
+         
+
+
+
+
+
+            <!-- يمكنك إضافة المزيد من الألعاب هنا -->
+            
         </main>
+    </div>
+
+    <!-- حاوية الإعلان -->
+    <div id="ad-container">
+        <script type="text/javascript">
+            // تعريف خيارات الإعلان
+           // var atOptions = {
+              //  'key': '1e6c0af90b2c4eeae9f9aa353b0b8f74',
+                //'format': 'iframe',
+        //        'height': 90,
+          //      'width': 728,
+            //    'params': {}
+      //      };
+
+            // دالة لتحميل الإعلان
+        //    function loadAd() {
+          //      var script = document.createElement('script');
+            //    script.type = 'text/javascript';
+              //  script.src = '//relishsubsequentlytank.com/e72f74d8ea0398857cdba4ea7af8f358/invoke.js';
+         //       document.getElementById('ad-container').innerHTML = ''; // مسح الإعلان القديم
+           //     document.getElementById('ad-container').appendChild(script); // إضافة الإعلان الجديد
+          //  }
+
+            // تحميل الإعلان لأول مرة
+      //      loadAd();
+
+            // تحديث الإعلان كل 5 ثوانٍ
+        //    setInterval(loadAd, 5000);
+        </script>
     </div>
 
     <!-- إطار اللعبة -->
@@ -349,7 +282,6 @@
         document.querySelectorAll('.top-bar .icons .icon[data-category]').forEach(icon => {
             icon.addEventListener('click', () => {
                 const category = icon.getAttribute('data-category');
-                document.querySelector('.ad-banner').style.display = 'none'; // إخفاء الإعلان
                 document.querySelector('.container').style.display = 'block'; // إظهار المحتوى
 
                 // إخفاء جميع الألعاب
@@ -366,25 +298,23 @@
 
         // تشغيل اللعبة
         document.querySelectorAll('.game-card').forEach(card => {
-    card.addEventListener('click', () => {
-        const gameUrl = card.getAttribute('data-game-url');
-        document.getElementById('gameFrame').src = gameUrl;
-        document.getElementById('gameFrame').style.display = 'block';
-        document.querySelector('.close-btn').style.display = 'block';
-        document.querySelector('.top-bar').style.display = 'none'; // إخفاء الشريط العلوي
-        document.querySelector('.container').style.display = 'none'; // إخفاء المحتوى
-        document.querySelector('.ad-banner').style.display = 'none'; // إخفاء البنر
+            card.addEventListener('click', () => {
+                const gameUrl = card.getAttribute('data-game-url');
+                document.getElementById('gameFrame').src = gameUrl;
+                document.getElementById('gameFrame').style.display = 'block';
+                document.querySelector('.close-btn').style.display = 'block';
+                document.querySelector('.top-bar').style.display = 'none'; // إخفاء الشريط العلوي
+                document.querySelector('.container').style.display = 'none'; // إخفاء المحتوى
             });
         });
 
         // إغلاق اللعبة
         function closeGame() {
-    document.getElementById('gameFrame').style.display = 'none';
-    document.querySelector('.close-btn').style.display = 'none';
-    document.getElementById('gameFrame').src = '';
-    document.querySelector('.top-bar').style.display = 'flex'; // إظهار الشريط العلوي
-    document.querySelector('.container').style.display = 'block'; // إظهار المحتوى
-    document.querySelector('.ad-banner').style.display = 'flex'; // إظهار البنر
+            document.getElementById('gameFrame').style.display = 'none';
+            document.querySelector('.close-btn').style.display = 'none';
+            document.getElementById('gameFrame').src = '';
+            document.querySelector('.top-bar').style.display = 'flex'; // إظهار الشريط العلوي
+            document.querySelector('.container').style.display = 'block'; // إظهار المحتوى
         }
 
         // دعم اللمس
